@@ -1,0 +1,290 @@
+/* JURASSIC MATHS — Mode concentration
+   Une seule grande fenêtre, sans publicité, sticker ou meme pendant l'exercice. */
+:root {
+  --ink: #222922;
+  --paper: #f9faf7;
+  --grid: rgba(97, 161, 197, 0.085);
+  --surface: #ffffff;
+  --muted: #6c746c;
+  --line: #dfe5de;
+  --accent: #c7f06b;
+  --focus: #406a25;
+}
+
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  min-width: 320px;
+  background-color: #f7faff;
+  /* Cahier Gen Alpha : on atténue les dessins pour privilégier l'exercice. */
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.42), rgba(255, 255, 255, 0.42)),
+    url('/jurassic-doodles.png');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  color: var(--ink);
+  font-family: 'Segoe UI', Arial, sans-serif;
+}
+button, input { font: inherit; }
+button { cursor: pointer; }
+button:focus-visible, input:focus-visible { outline: 3px solid var(--focus); outline-offset: 3px; }
+
+.site-shell {
+  width: min(1200px, calc(100% - 48px));
+  margin: 0 auto;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 24px;
+}
+.site-header {
+  min-height: 75px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 22px;
+}
+.wordmark { font-size: 16px; font-weight: 900; letter-spacing: -.055em; white-space: nowrap; }
+.wordmark > span:first-child { color: #557530; }
+.wordmark > span:last-child { color: #9cba47; }
+.daily-label {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--muted);
+  text-align: right;
+}
+
+/* Large fenêtre centrale : toute la place est donnée au problème. */
+.focus-card {
+  position: relative;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: min(790px, calc(100dvh - 100px));
+  background: var(--surface);
+  border: 1px solid #d8ded6;
+  border-radius: 19px;
+  box-shadow: 0 12px 46px rgba(30, 45, 29, .07);
+  overflow: hidden;
+}
+.card-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 28px clamp(24px, 5vw, 65px) 18px;
+  font-size: 13px;
+  color: var(--muted);
+}
+.head-topic { font-weight: 650; }
+.question-number { white-space: nowrap; font-weight: 700; color: #52604e; }
+.progress-track { height: 5px; width: 100%; background: #edf1eb; overflow: hidden; }
+.progress-fill { height: 100%; background: #97c94f; transition: width 250ms ease; }
+
+.workspace {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: clamp(22px, 4vh, 48px);
+  padding: clamp(32px, 7vh, 80px) clamp(24px, 8vw, 100px);
+  text-align: center;
+}
+.question-area { width: 100%; max-width: 920px; }
+.section-kicker {
+  margin: 0 0 28px;
+  text-transform: uppercase;
+  font-size: 11px;
+  font-weight: 750;
+  letter-spacing: .16em;
+  color: #6c8460;
+}
+.math-display {
+  font-size: clamp(20px, 2.5vw, 26px);
+  line-height: 1.8;
+  text-align: center;
+}
+
+.math-display p {
+  margin: 0 0 24px;
+}
+
+.math-display {
+  white-space: pre-line;
+}
+
+.explanation {
+  font-size: 18px;
+  line-height: 1.8;
+}
+
+.answer-form { width: min(100%, 540px); display: flex; flex-direction: column; align-items: stretch; text-align: left; }
+.answer-form label { font-size: 15px; font-weight: 750; margin-bottom: 10px; }
+.answer-form input {
+  width: 100%;
+  min-height: 72px;
+  border: 2px solid #bac9b7;
+  border-radius: 12px;
+  padding: 13px 20px;
+  background: #fff;
+  color: var(--ink);
+  font-size: 29px;
+  font-weight: 500;
+  text-align: center;
+}
+.answer-form input::placeholder { color: #adb6aa; }
+.answer-form input:focus { border-color: var(--focus); }
+.answer-form input[aria-invalid='true'] { border-color: #b74437; }
+.input-help { color: var(--muted); font-size: 12px; text-align: center; margin: 10px 0 22px; }
+.error-message { color: #b74437; font-size: 13px; margin: -10px 0 14px; text-align: center; }
+.primary-button {
+  width: 100%;
+  min-height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 18px;
+  padding: 15px 24px;
+  border: 1.5px solid var(--ink);
+  border-radius: 12px;
+  background: var(--accent);
+  color: var(--ink);
+  font-size: 16px;
+  font-weight: 800;
+  transition: background-color .15s ease;
+}
+.primary-button:hover { background: #b3e550; }
+.primary-button span { font-size: 24px; line-height: 1; }
+
+.feedback-panel { width: min(100%, 700px); border-top: 1px solid var(--line); padding-top: 28px; text-align: left; }
+.feedback-panel h2 { margin: 0 0 14px; font-size: clamp(25px, 3vw, 33px); }
+.feedback-win h2 { color: #3e722f; }
+.feedback-lose h2 { color: #a43c2d; }
+.expected-answer { margin: 0 0 14px; font-size: 16px; }
+.explanation { font-size: clamp(16px, 1.5vw, 19px); line-height: 1.8; overflow-x: auto; }
+.explanation .katex-display { overflow-x: auto; }
+.feedback-panel .primary-button { width: min(100%, 420px); margin-top: 26px; }
+
+.results-panel h1 { font-size: clamp(32px, 5vw, 58px); margin: 0; line-height: 1.15; }
+.big-score { font-size: clamp(85px, 12vw, 150px); font-weight: 850; letter-spacing: -.08em; line-height: 1; }
+.big-score span { color: var(--muted); font-size: .35em; font-weight: 500; letter-spacing: normal; }
+.results-panel > p:not(.section-kicker) { margin: 0; font-size: 18px; color: var(--muted); }
+.results-panel .primary-button { max-width: 400px; }
+
+/* Wrong-answer T. rex: edge-to-edge inside the quiz card. */
+.dino-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 5;
+  overflow: hidden;
+  background-color: #fafdff;
+  background-image:
+    linear-gradient(rgba(135, 194, 231, .28) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(135, 194, 231, .28) 1px, transparent 1px);
+  background-size: 27px 27px;
+}
+
+/* Keep the controls readable without shrinking the animation. */
+.dino-caption,
+.skip-animation {
+  position: absolute;
+  left: 50%;
+  z-index: 2;
+  transform: translateX(-50%);
+  margin: 0;
+  white-space: nowrap;
+  background: rgba(255, 255, 255, .92);
+  border-radius: 999px;
+  box-shadow: 0 3px 18px rgba(29, 51, 65, .12);
+}
+.dino-caption {
+  top: 22px;
+  padding: 10px 20px;
+  font-weight: 750;
+  font-size: 19px;
+}
+.dino-stage {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+.dino-media {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+/* The portrait GIF is only used if the widescreen video cannot play. */
+.dino-stage img.dino-media { object-fit: contain; }
+.skip-animation {
+  bottom: 20px;
+  border: 1px solid #bdd0dd;
+  color: #364e57;
+  font-size: 13px;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  padding: 12px 19px;
+}
+.skip-animation:hover { color: #1a3038; background: #fff; }
+
+.empty-screen { margin: 12vh auto; max-width: 600px; padding: 30px; text-align: center; }
+
+@media (max-width: 650px) {
+  .site-shell { width: 100%; padding-bottom: 0; }
+  .site-header { min-height: 58px; padding: 0 18px; }
+  .wordmark { font-size: 13px; }
+  .daily-label { display: none; }
+  .focus-card { border-radius: 0; border-left: 0; border-right: 0; min-height: calc(100dvh - 58px); box-shadow: none; }
+  .card-head { padding: 20px 20px 16px; }
+  .workspace { padding: 32px 22px 55px; gap: 36px; }
+  .math-display { font-size: clamp(18px, 4.5vw, 22px); }
+  .answer-form input { font-size: 25px; }
+  .feedback-panel .primary-button { width: 100%; }
+  .dino-media { object-fit: contain; }
+  .dino-caption { top: 15px; font-size: 16px; padding: 9px 15px; }
+  .skip-animation { bottom: 14px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; }
+}
+
+/* L'en-tête garde un contraste lisible sur les illustrations. */
+.site-header {
+  background: rgba(255, 255, 255, 0.88);
+  padding: 0 20px;
+  border-radius: 12px;
+  margin: 8px 0;
+}
+
+/* Certains navigateurs mobiles gèrent mal les images fixes. */
+@media (max-width: 650px) {
+  body { background-attachment: scroll; }
+  .site-header { margin: 0; border-radius: 0; }
+}
+
+/* Non-blocking notification if the statistics server is offline. */
+.tracking-warning { margin: 0; padding: 10px 18px; background:#fff4d9; color:#684b12; font-size:13px; text-align:center; }
+
+/* Optional geometry diagram included in a question. */
+.question-figure {margin:20px auto;max-width:520px;text-align:center;}
+.question-figure img {display:block;width:100%;height:auto;max-height:340px;object-fit:contain;border-radius:12px;background:#fff;}
+.question-figure figcaption {font-size:.85rem;color:#5b6657;margin-top:8px;}
+
+
+/* Bonne réponse : le GIF est dans la correction et n'empêche pas de lire les explications. */
+.success-inline-gif {
+  display: block;
+  width: min(100%, 360px);
+  height: auto;
+  margin: 12px 0 18px;
+  border-radius: 12px;
+  border: 1px solid var(--line);
+}
+@media (max-width: 650px) {
+  .success-inline-gif { width: min(100%, 300px); margin-inline: auto; }
+}

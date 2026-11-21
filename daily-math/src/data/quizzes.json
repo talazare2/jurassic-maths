@@ -1,0 +1,181 @@
+{
+  "quizzes": [
+    {
+      "id": 2,
+      "date": "2026-11-21",
+      "title": "Aires, Pythagore, puissances et calcul littéral",
+      "questions": [
+        {
+          "id": "q1",
+          "category": "Aires — formule",
+          "difficulty": 1,
+          "statement": "Un rectangle a pour longueur $a$ et pour largeur $b$.\n Sans regarder ta fiche de cours, écris la formule \n qui permet de calculer son aire.",
+          "answer": "a*b",
+          "acceptedAnswers": [
+            "a*b",
+            "ab",
+            "b*a",
+            "ba"
+          ],
+          "explanation": "L'aire du rectangle est le produit de sa longueur par sa largeur : $A=a\\times b$."
+        },
+        {
+          "id": "q2",
+          "category": "Aires — rectangle",
+          "difficulty": 1,
+          "statement": "Un rectangle mesure 3 cm de largeur et 5 cm de longueur.\nQuelle est son aire en cm² ? ",
+          "answer": "15", 
+          "acceptedAnswers": [
+            "15 cm",
+            "15 cm2",
+            "15 cm^2",
+            "15cm",
+            "15cm2",
+            "15cm^2"
+          ],         
+          "explanation": "Aire = $3\\times5=15$ cm²."
+        },
+        {
+          "id": "q3",
+          "category": "Aires — problème",
+          "difficulty": 2,
+          "statement": "Un terrain de football a une aire de **6 400 m²**. \n On construit une tribune rectangulaire le long du terrain.\nElle mesure 100 m de longueur et 5 m de largeur.\nQuelle est l'aire totale du terrain et de la tribune, en m² ?",
+          "answer": "6900",          
+          "acceptedAnswers": [
+            "6900 m",
+            "6900 m2",
+            "6900 m^2",
+            "6900m",
+            "6900m2",
+            "6900m^2"
+          ],       
+          "explanation": "La tribune a une aire de $100\\times5=500$ m². L'aire totale est $6400+500=6900$ m²."
+        },
+        {
+          "id": "q4",
+          "category": "Pythagore — vocabulaire",
+          "difficulty": 2,
+          "statement": "Dans un triangle KLM rectangle en K, \non connaît les longueurs des deux côtés de l'angle droit : KL et KM.\nComment peut-on calculer la longueur du côté LM ?\n\n**Choisis la bonne réponse :**\n\n**A.** $LM = KL + KM$\n**B.** $LM = \\sqrt{KL^2 + KM^2}$\n**C.** $LM = \\sqrt{KL + KM}$\n**D.** $LM = \\sqrt{KL^2 - KM^2}$",
+          "answer": [
+            "B"
+          ],
+          "acceptedAnswers": [
+            "b"
+          ],
+          "explanation": "D'après le théorème de Pythagore, dans un triangle rectangle, le carré de l'hypoténuse est égal à la somme des carrés des deux autres côtés. \n Dans le triangle KLM rectangle en K, l'hypoténuse est LM. On a donc $LM^2 = KL^2 + KM^2$. \n Pour trouver la longueur LM, on prend la racine carrée : $LM = \\sqrt{KL^2 + KM^2}$."
+        },
+        {
+          "id": "q5",
+          "category": "Pythagore — calcul de longueur",
+          "difficulty": 3,
+          "statement": "Un triangle ABC est rectangle en A. \nCoté BC mesure 5,6 m et l'un des côtés de l'angle droit mesure 3,5 m.\nQuelle est la longueur de l'autre côté **en mètres, \n arrondie au centimètre près** ?",
+          "answer": "4,37",
+          "acceptedAnswers": [
+            "4.37 m",
+            "4,37 m",
+            "4.37m",
+            "4,37m"
+          ],
+          "explanation": "Avec le théorème de Pythagore, la longueur cherchée vaut $\\sqrt{5{,}6^2-3{,}5^2}=\\sqrt{19{,}11}\\approx4{,}37$ m."
+        },
+        {
+          "id": "q6",
+          "category": "Aires — triangle",
+          "difficulty": 2,
+          "statement": "ABCD est un rectangle dont l'aire est de 16 cm².\nQuelle est l'aire du triangle ABC, en cm² ? ",
+          "answer": "8",
+          "explanation": "La diagonale AC partage le rectangle ABCD en deux triangles de même aire : $16\\div2=8$ cm²."
+        },
+        {
+          "id": "q7",
+          "category": "Pythagore — réciproque",
+          "difficulty": 2,
+          "statement": "Un triangle possède trois côtés de longueurs 3 cm, 5 cm et 6 cm.\nCe triangle est-il rectangle ? (oui ou non)",
+          "answer": "non",
+          "acceptedAnswers": [
+            "non"
+          ],
+          "explanation": "On compare $3^2+5^2=34$ à $6^2=36$. Comme $34\\ne36$, le triangle n'est pas rectangle."
+        },
+        {
+          "id": "q8",
+          "category": "Puissances",
+          "difficulty": 2,
+          "statement": "Sans calculatrice, calcule :\n$$2^4+3^3$$",
+          "answer": "43",
+          "explanation": "$2^4=16$ et $3^3=27$, donc $16+27=43$."
+        },
+        {
+          "id": "q9",
+          "category": "Calcul littéral — simplification",
+          "difficulty": 3,
+          "statement": "Simplifie au maximum l'expression :\n$$2(x+3)-(x+6)$$",
+          "answer": "x",
+          "acceptedAnswers": [
+            "x"
+          ],
+          "explanation": "$2(x+3)-(x+6)=2x+6-x-6=x$."
+        },
+        {
+          "id": "q10",
+          "category": "Calcul littéral — QCM",
+          "difficulty": 4,
+          "statement": "Développe et réduis l'expression suivante :\n$$a(a+b)+2(a-b)-(a^2-3b)+a$$\n\n**Choisis la bonne réponse :**\n**A.** $2a^2+ab+3a+b$\n**B.** $ab+3a-5b$\n**C.** $ab+3a+b$\n**D.** $2a+2b+3a$\n\n*Entre la lettre de ton choix.*",
+          "answer": "C",
+          "acceptedAnswers": [
+            "C",
+            "c"
+          ],
+          "explanation": "$a^2+ab+2a-2b-a^2+3b+a=ab+3a+b$. Bonne réponse : **C**."
+        }
+      ]
+    },
+    {
+      "id": 1,
+      "date": "2026-11-15",
+      "title": "Les arrondis : nombres et fractions décimales",
+      "questions": [
+        {
+          "id": "q4",
+          "category": "Fractions décimales",
+          "difficulty": 2,
+          "statement": "Écris la fraction décimale suivante sous forme décimale :$\\frac{347}{100}$ Puis arrondis-la au dixième le plus proche.",
+          "explanation": "$\\frac{347}{100}=3{,}47$. Le chiffre des centièmes est $7$, donc $3{,}47$ s'arrondit à $3{,}5$ au dixième.",
+          "answer": "3,5"
+        },
+        {
+          "id": "q3",
+          "category": "Arrondir au centième",
+          "difficulty": 2,
+          "statement": "Arrondis $7{,}285$ au centième le plus proche.",
+          "explanation": "Pour arrondir au centième, on regarde le chiffre des millièmes. C'est $5$ : le chiffre des centièmes passe de $8$ à $9$. On obtient $7{,}29$.",
+          "answer": "7,29"
+        },
+        {
+          "id": "q1",
+          "category": "Arrondir au dixième",
+          "difficulty": 1,
+          "statement": "Arrondis le nombre $4{,}36$ au dixième le plus proche.",
+          "explanation": "Pour arrondir au dixième, on regarde le chiffre des centièmes. Ici, c'est $6$ : on augmente donc le chiffre des dixièmes de $1$. Résultat : $4{,}4$.",
+          "answer": "4,4"
+        },
+        {
+          "id": "q2",
+          "category": "Arrondir à l'unité",
+          "difficulty": 1,
+          "statement": "Quel est l'arrondi de $12{,}49$ à l'unité la plus proche ?",
+          "explanation": "On regarde le chiffre des dixièmes : $4$ est inférieur à $5$. On conserve donc $12$ comme partie entière.",
+          "answer": "12"
+        },
+        {
+          "id": "q5",
+          "category": "Arrondis avec retenue",
+          "difficulty": 3,
+          "statement": "Arrondis $9{,}996$ au centième le plus proche.",
+          "explanation": "Le chiffre des millièmes est $6$, donc on augmente le chiffre des centièmes ($9$). La retenue se propage : $9{,}996$ s'arrondit à $10{,}00$ au centième.",
+          "answer": "10,00"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+# One free Node web service. Neon database is provisioned separately at neon.com.
+# NEVER commit DATABASE_URL or ADMIN_PASSWORD to this file.
+services:
+  - type: web
+    name: jurassic-maths
+    runtime: node
+    plan: free
+    rootDir: daily-math
+    buildCommand: npm ci --include=dev && npm run build
+    startCommand: node server/index.mjs
+    healthCheckPath: /api/health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: TRUST_PROXY
+        value: "true"
+      - key: RETENTION_DAYS
+        value: "90"
+      - key: DATABASE_URL
+        sync: false
+      - key: ADMIN_PASSWORD
+        sync: false
