@@ -56,9 +56,7 @@
           "category": "Pythagore — vocabulaire",
           "difficulty": 2,
           "statement": "Dans un triangle KLM rectangle en K, \non connaît les longueurs des deux côtés de l'angle droit : KL et KM.\nComment peut-on calculer la longueur du côté LM ?\n\n**Choisis la bonne réponse :**\n\n**A.** $LM = KL + KM$\n**B.** $LM = \\sqrt{KL^2 + KM^2}$\n**C.** $LM = \\sqrt{KL + KM}$\n**D.** $LM = \\sqrt{KL^2 - KM^2}$",
-          "answer": [
-            "B"
-          ],
+          "answer": "B",
           "acceptedAnswers": [
             "b"
           ],
